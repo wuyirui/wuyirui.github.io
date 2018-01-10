@@ -1,0 +1,326 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<TITLE>成绩搜寻</TITLE>
+<script language="javascript">
+function search(){
+    var searchName=document.getElementById("name").value;
+    var searchTotal=document.getElementById("check").value;
+    if(searchName=="" && searchTotal==""){
+        alert("请输入姓名或全局搜索条件");
+        return;
+    }
+     
+    var nameLength=searchName.length;
+    var table = document.getElementById("table"); 
+    var rowsLength = table.rows.length;
+    var resultTable=document.getElementById("result");
+    var resultLength=resultTable.rows.length;
+    while(resultLength>1){
+        resultTable.deleteRow(resultLength-1);
+        resultLength--;
+    }
+     
+     for(i=1;i<rowsLength;i++){
+     //根据姓名搜索
+         if(searchName!=""){
+         //找到姓名那一列
+            var name=table.rows[i].cells[1].innerText;
+            var cellsLength=table.rows[i].cells.length;
+            //alert(cellsLength);
+            if(searchName==name.substring(0,nameLength)){
+                var currentRow=resultTable.rows.length;
+                var NewRow=resultTable.insertRow(currentRow);
+                for(j=0;j<cellsLength;++j){
+                    newCell=NewRow.insertCell(j);                   
+                    newCell.innerText= table.rows[i].cells[j].innerText;
+                }
+            }
+        }
+        else{
+        //全局搜索       
+            var cellsLength=table.rows[i].cells.length;                       
+            for(j=0;j<cellsLength;++j){
+                var total=table.rows[i].cells[j].innerText;
+                if(searchTotal==total){
+                    var currentRow=resultTable.rows.length;
+                    var NewRow=resultTable.insertRow(currentRow);
+                    for(j=0;j<cellsLength;++j){
+                        newCell=NewRow.insertCell(j);                   
+                        newCell.innerText= table.rows[i].cells[j].innerText;
+                    }
+                }
+            }
+        }
+ } 
+}
+ 
+</script>
+</HEAD>
+<style>
+    #table{
+        display:none;/*关键属性，这里的属性值表示隐藏*/
+        width:100px;
+        height:100px;
+        border: 1px solid #ddd;
+    }
+</style>
+
+<BODY>
+姓名：<input type="text"  id="name"/><br>
+全局搜索：<input type="text"  id="check"/><br>
+          <input type="button"  id="search" value="搜索" onclick="search()"/>
+          
+<table id="table">
+       <tr>
+               <th>编号</th>
+               <th>姓名</th>
+               <th>分数</th>
+        </tr>
+        <tr>	
+               <td>1</td>
+               <td>陈杰</td>
+               <td>86</td>
+        </tr>
+         <tr>	
+               <td>1</td>
+               <td>陈雷雷</td>
+               <td>90</td>
+        </tr>
+		 <tr>	
+               <td>1</td>
+               <td>杜心宇</td>
+               <td>78</td>
+        </tr>
+		 <tr>	
+               <td>1</td>
+               <td>郝旭阳</td>
+               <td>78</td>
+        </tr>
+		 <tr>	
+               <td>1</td>
+               <td>马锐</td>
+               <td>100</td>
+        </tr>
+		 <tr>	
+               <td>1</td>
+               <td>祁磊</td>
+               <td>83</td>
+        </tr> <tr>	
+               <td>1</td>
+               <td>孙醒醒</td>
+               <td>74</td>
+        </tr>
+		 <tr>	
+               <td>1</td>
+               <td>张理皞</td>
+               <td>78</td>
+        </tr>
+		 <tr>	
+               <td>1</td>
+               <td>王登峰</td>
+               <td>62</td>
+        </tr>
+		 <tr>	
+               <td>1</td>
+               <td>张良辰</td>
+               <td>73</td>
+        </tr>
+		 <tr>	
+               <td>1</td>
+               <td>赵灵霄</td>
+               <td>69</td>
+        </tr>
+		 <tr>	
+               <td>1</td>
+               <td>唐波</td>
+               <td>76</td>
+        </tr> <tr>	
+               <td>1</td>
+               <td>王威</td>
+               <td>82</td>
+        </tr>
+		 <tr>	
+               <td>1</td>
+               <td>韩利丽</td>
+               <td>93</td>
+        </tr>
+		 <tr>	
+               <td>1</td>
+               <td>卢雨彤</td>
+               <td>83</td>
+        </tr>
+		 <tr>	
+               <td>1</td>
+               <td>王璞瑶</td>
+               <td>89</td>
+        </tr>
+		 <tr>	
+               <td>1</td>
+               <td>周子馨</td>
+               <td>0</td>
+        </tr>
+		 <tr>	
+               <td>1</td>
+               <td>刘仁春</td>
+               <td>98</td>
+        </tr>
+		 <tr>	
+               <td>1</td>
+               <td>彭路</td>
+               <td>60</td>
+        </tr>
+		 <tr>	
+               <td>1</td>
+               <td>吴继森</td>
+               <td>76</td>
+        </tr>
+		 <tr>	
+               <td>1</td>
+               <td>徐天宇</td>
+               <td>90</td>
+        </tr>
+		 <tr>	
+               <td>1</td>
+               <td>俞耀维</td>
+               <td>93</td>
+        </tr>
+		 <tr>	
+               <td>1</td>
+               <td>陈亚亚</td>
+               <td>92</td>
+        </tr>
+		 <tr>	
+               <td>1</td>
+               <td>顾陈楠</td>
+               <td>97</td>
+        </tr>
+		 <tr>	
+               <td>1</td>
+               <td>魏晶</td>
+               <td>88</td>
+        </tr>
+		 <tr>	
+               <td>1</td>
+               <td>吴水清</td>
+               <td>87</td>
+        </tr>
+		 <tr>	
+               <td>1</td>
+               <td>徐书艳</td>
+               <td>93</td>
+        </tr>
+		 <tr>	
+               <td>1</td>
+               <td>张龙娇</td>
+               <td>85</td>
+        </tr>
+		 <tr>	
+               <td>1</td>
+               <td>钟惠英</td>
+               <td>88</td>
+        </tr>
+		 <tr>	
+               <td>1</td>
+               <td>曹永明</td>
+               <td>83</td>
+        </tr>
+		 <tr>	
+               <td>1</td>
+               <td>曹志立</td>
+               <td>87</td>
+        </tr>
+		<tr>	
+               <td>1</td>
+               <td>程义</td>
+               <td>67</td>
+        </tr>
+		<tr>	
+               <td>1</td>
+               <td>方仁渊</td>
+               <td>78</td>
+        </tr>
+		<tr>	
+               <td>1</td>
+               <td>高建</td>
+               <td>85</td>
+        </tr><tr>	
+               <td>1</td>
+               <td>郭泽权</td>
+               <td>85</td>
+        </tr><tr>	
+               <td>1</td>
+               <td>郝帅</td>
+               <td>69</td>
+        </tr><tr>	
+               <td>1</td>
+               <td>贾旸旸</td>
+               <td>79</td>
+        </tr><tr>	
+               <td>1</td>
+               <td>刘鹏飞</td>
+               <td>66</td>
+        </tr><tr>	
+               <td>1</td>
+               <td>申琛</td>
+               <td>73</td>
+        </tr>
+		<tr>	
+               <td>1</td>
+               <td>师岩</td>
+               <td>81</td>
+        </tr><tr>	
+               <td>1</td>
+               <td>孙思东</td>
+               <td>62</td>
+        </tr><tr>	
+               <td>1</td>
+               <td>王敏</td>
+               <td>89</td>
+        </tr>
+		<tr>	
+               <td>1</td>
+               <td>王少强</td>
+               <td>74</td>
+        </tr>
+		<tr>	
+               <td>1</td>
+               <td>张天龙</td>
+               <td>60</td>
+        </tr>
+		<tr>	
+               <td>1</td>
+               <td>周李京</td>
+               <td>84</td>
+        </tr>
+		<tr>	
+               <td>1</td>
+               <td>庄天益</td>
+               <td>81</td>
+        </tr>
+		<tr>	
+               <td>1</td>
+               <td>邹希</td>
+               <td>93</td>
+        </tr>
+		<tr>	
+               <td>1</td>
+               <td>赵生银</td>
+               <td>80</td>
+        </tr>
+</table>
+<br>
+<br>
+搜索结果：<br>
+<div>
+<table id="result">
+<tr>
+               <th>编号</th>
+               <th>姓名</th>
+               <th>分数</th>
+        </tr>
+</table>
+</div>
+</BODY>
+</HTML>
