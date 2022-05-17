@@ -2,8 +2,8 @@
 body {font-family: sans-serif; line-height: 1.2em; background: #fafafa; color: #444;}
 #wrapper {margin: 0px; padding: 0px; background: #fff; box-shadow:none;}
 ul {margin: 0 0 0 15px; position: relative;}
-li {margin: 0 0 5px 0; position: relative; font-size: 13px;}
-p {text-align: justify; font-size: 13px;}
+li {text-align: justify; margin: 0 0 5px 0; position: relative; font-size: 13px;}
+p {text-align: center; font-size: 13px;}
 .clear {clear: both;}
 a {color: #444; text-decoration: none;}
 
@@ -63,7 +63,7 @@ ul#skills li {
 }
 ul#skills li del {display: none;}
 
-#copyright {text-align: center; font:bold 10px sans-serif; text-transform: uppercase; color: #aaa; margin: 20px 0 60px; text-shadow: 1px 1px 1px #fff;}
+#copyright {text-align: justify; font:bold 10px sans-serif; text-transform: uppercase; color: #aaa; margin: 20px 0 60px; text-shadow: 1px 1px 1px #fff;}
 
 h2#contact,
 #contactform,

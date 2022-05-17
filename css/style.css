@@ -30,11 +30,12 @@ body {
 	color: #444;
 	height: 100%;
 	width: auto;
+	text-align: justify;
 }
 #wrapper {max-width: 900px; margin: 60px auto 30px; padding:60px; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.1); position: relative;}
 ul {margin: 0 0 0 15px; position: relative;}
 li {margin: 0 0 5px 0; font-size: 16px;}
-p {text-align: justify; font-size: 16px;}
+p {text-align: justify; font-size: 17px;}
 .clear {clear: both;}
 a {color: #444; text-decoration: none;}
 a:hover {text-decoration:underline;}
@@ -192,7 +193,7 @@ ul#skills li:after {
 	right: 5px;
 	line-height: 26px;
 	width: 50px;
-	text-align: right;
+	text-align: justify;
 	color: #aaa;
 }
 ul#skills li.s100:after {content: "100%";}
